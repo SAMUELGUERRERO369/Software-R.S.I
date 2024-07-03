@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R.S.I.</title>
+  <link rel="stylesheet" href="style_inicio.css">
+  <link rel="stylesheet" href="https://fontawesome.com/icons/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://img.icons8.com/?size=100&id=tIGF40qilLXA&format=png&color=000000">
+  <link rel="shortcut icon" href="icon_proyecto.png" height="35" width="35" type="imagex-icon">
+
+
+</head>
+
+<body>
+
+  <nav class="topbar">
+    <div class="box-bar">
+
+    </div>
+  </nav>
+
+  <!-- menu boton  -->
+  <div class="menu-btn">
+    <img src="menu.png" alt="">
+  </div>
+
+  <!-- (.side-bar) comando para div -->
+  <div class="side-bar">
+    <header>
+      <div class="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <img src="foto.jpg" alt="">
+      <h1>ADMINISTRADOR</h1>
+    </header>
+
+    <div class="menu">
+      <!-- (.item>a>i.fas)*5 = comando crear 5 div con etiqueta a, i -->
+      <div class="item"><a class="sub-btn"><img src="reporte.png" class="reporte">REPORTES
+          <i class="fa-solid fa-caret-down"></i>
+        </a>
+        <div class="sub-menu">
+          <a href="" class="sub-item">Generar incidencia</a>
+          <a href="" class="sub-item">Consultar incidencia</a>
+          <a href="" class="sub-item">Modificar incidencia</a>
+        </div>
+      </div>
+      <div class="item"><a class="sub-btn"><img src="seguimiento.png" alt="">SEGUIMIENTO
+          <i class="fa-solid fa-caret-down"></i>
+        </a>
+        <div class="sub-menu">
+          <a href="#" class="sub-item">Generar seguimiento</a>
+          <div class="modal">
+            <div class="modal_header"> Formulario seguimiento
+              <a href="#" class="js-close-modal">X</a>
+            </div>
+            <p> registro de seguimiento</p>
+          </div>
+          <a href="#" class="sub-item">Consultar seguimiento</a>
+          <a href="#" class="sub-item">Modificar seguimiento</a>
+        </div>
+      </div>
+
+      <div class="item"><a class="sub-btn"><img src="inventario.png" alt="">INVENTARIO
+          <i class="fa-solid fa-caret-down"></i>
+        </a>
+        <div class="sub-menu">
+          <a href="" class="sub-item">Solicitud</a>
+          <a href="" class="sub-item">Lista de productos</a>
+        </div>
+      </div>
+      <div class="item"><a class="sub-btn"><i class="fas fa-cog"></i>CONFIGURACION
+          <i class="fa-solid fa-caret-down"></i>
+        </a>
+        <div class="sub-menu">
+          <a href="" class="sub-item">Brahian es gay</a>
+          <a href="" class="sub-item"></a>
+          <a href="" class="sub-item"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============== javascript sidebar ======================== -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- ====== Expandir y cerrar sidebar ======-->
+  <script>
+    $(document).ready(function () {
+
+      // abrir boton
+
+      $('.menu-btn').click(function () {
+        $('.side-bar').addClass('active');
+        $('.menu-btn').css("visibility", "hidden")
+      });
+      // cerrar botton
+
+      $('.close-btn').click(function () {
+        $('.side-bar').removeClass('active');
+        $('.menu-btn').css("visibility", "visible");
+      });
+
+      //  abrir y cerrar sub menus
+      $('.sub-btn').click(function () {
+        $(this).next('.sub-menu').slideToggle();
+        $(this).find('.fa-solid fa-caret-down').toggleclass('rotate');
+      });
+    })
+  </script>
+
+  <script>
+    $(".sub-item").click(function () {
+      $(".modal").addClass("visible");
+    });
+
+    $(".js-close-modal").click(function () {
+      $(".modal").removeClass("visible");
+    });
+
+    $(document).click(function (event) {
+      //if you click on anything except the modal itself or the "open modal" link, close the modal
+      if (!$(event.target).closest(".modal,.sub-item").length) {
+        $("body").find(".modal").removeClass("visible");
+      }
+    });
+  </script>
+
+  <!-- ======================== MAIN =========================== -->
+  <div class="main">
+    <div class="topbar">
+      <div class="toggle"></div>
+
+    </div>
+  </div>
+
+
+
+  <!-- ======== ionicons =========== -->
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

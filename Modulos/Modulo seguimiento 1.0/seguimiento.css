@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+}
+.sidebar {
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: #06093f;
+    color: white;
+    height: 130vh;
+    padding-top: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+}
+.imagen{
+    padding-top: 30%;
+}
+
+
+
+.sidebar h1 {
+    font-size: 120%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sidebar label {
+    padding: 30px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+}
+.sidebar label:hover {
+   
+    background-color: #2a32ad;
+    border-radius: 50PX;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+   
+}
+.submenu {
+    display: none;
+    
+}
+.submenu button {
+    text-align: auto;
+    width: 60%;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.submenu button:hover {
+    background-color: #36449db7;
+    border-radius: 50px;
+
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"]:checked + label + .submenu {
+    display: block;
+}
